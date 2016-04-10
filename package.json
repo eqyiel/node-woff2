@@ -1,0 +1,39 @@
+{
+  "name": "node-woff2",
+  "version": "0.0.1",
+  "description": "Node port of Google's woff2 utility.",
+  "main": "./src/woff2.js",
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "author": {
+    "name": "Ruben Maher",
+    "email": "r@rkm.id.au",
+    "url": "https://rkm.id.au/"
+  },
+  "bugs": {
+    "url": "https://github.com/eqyiel/node-woff2/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eqyiel/node-woff2.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bindings": "^1.2.1",
+    "nan": "^2.2.1",
+    "node-gyp": "^3.3.1"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^6.2.0",
+    "eslint-plugin-react": "^4.3.0",
+    "font-awesome": "^4.5.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-eslint": "^18.0.0",
+    "grunt-jsdoc-to-markdown": "^1.2.0",
+    "mmmagic": "^0.4.1",
+    "tap": "^5.7.1",
+    "temp": "^0.8.3"
+  }
+}
