@@ -34,7 +34,7 @@ Convert WOFF2 data to TTF.
 var woff2 = require('woff2');
 var input = fs.readFileSync('something.woff2');
 var output = 'output.ttf';
-fs.writeFileSync(output, WOFF2.decode(input));
+fs.writeFileSync(output, woff2.decode(input));
 ```
 <a name="woff2.encode"></a>
 
@@ -53,6 +53,6 @@ Convert TTF data to WOFF2.
 var woff2 = require('woff2');
 var input = fs.readFileSync('something.ttf');
 var output = 'output.woff2';
-fs.writeFileSync(output, WOFF2.encode(input));
+fs.writeFileSync(output, woff2.encode(input));
 ```
 ***

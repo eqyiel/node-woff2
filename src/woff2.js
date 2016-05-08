@@ -15,7 +15,7 @@ function woff2() {}
  * var woff2 = require('woff2');
  * var input = fs.readFileSync('something.woff2');
  * var output = 'output.ttf';
- * fs.writeFileSync(output, WOFF2.decode(input));
+ * fs.writeFileSync(output, woff2.decode(input));
  *
  * @param {Buffer} data WOFF2 data to be decoded.
  * @returns {Buffer} Decoded TTF data.
@@ -31,7 +31,7 @@ woff2.decode = require('bindings')('woff2_decode.node').decode;
  * var woff2 = require('woff2');
  * var input = fs.readFileSync('something.ttf');
  * var output = 'output.woff2';
- * fs.writeFileSync(output, WOFF2.encode(input));
+ * fs.writeFileSync(output, woff2.encode(input));
  *
  * @param {Buffer} data TTF font data to be encoded.
  * @returns {Buffer} Encoded WOFF2 data.
