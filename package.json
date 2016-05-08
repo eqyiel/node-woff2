@@ -1,7 +1,7 @@
 {
   "name": "node-woff2",
   "version": "0.0.1",
-  "description": "Node port of Google's woff2 utility.",
+  "description": "Node wrapper around Google's woff2 utility.",
   "main": "./src/woff2.js",
   "scripts": {
     "test": "tap test/*.js"
@@ -19,10 +19,17 @@
     "url": "git+https://github.com/eqyiel/node-woff2.git"
   },
   "license": "MIT",
+  "files": [
+    "README.md",
+    "Gruntfile.js",
+    "binding.gyp",
+    "src/",
+    "test/",
+    "woff2/"
+  ],
   "dependencies": {
     "bindings": "^1.2.1",
-    "nan": "^2.2.1",
-    "node-gyp": "^3.3.1"
+    "nan": "^2.2.1"
   },
   "devDependencies": {
     "eslint-config-airbnb": "^6.2.0",
