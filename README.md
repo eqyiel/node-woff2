@@ -1,13 +1,18 @@
 # node-woff2
 
-This is just a Node.js wrapper around Google's excellent [woff2](https://github.com/google/woff2) utility.
+This is just a Node.js wrapper around Google's excellent
+[woff2](https://github.com/google/woff2) utility.
 
 ## Special thanks
 
-[nfroidure](https://github.com/nfroidure) wrote a wrapper that converts TTF to WOFF2.  I wanted something that could encode and decode though, so I recycled his `bindings.gyp` file, and the file `./src/woff2_encode.cc` is more or less straight from his repository.  In respect for his work this wrapper is also under the MIT license.
+[nfroidure](https://github.com/nfroidure) wrote a wrapper that
+converts TTF to WOFF2.  I wanted something that could encode
+and decode though, so I recycled his `bindings.gyp` file, and
+the file `./src/woff2_encode.cc` is more or less straight from
+his repository.  In respect for his work this wrapper is also
+under the MIT license.
 
 ## API Reference
-
 <a name="woff2"></a>
 
 ## woff2 : <code>object</code>
@@ -55,4 +60,3 @@ var input = fs.readFileSync('something.ttf');
 var output = 'output.woff2';
 fs.writeFileSync(output, woff2.encode(input));
 ```
-***
