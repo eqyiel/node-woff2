@@ -8,8 +8,10 @@ const test = require('tap').test;
 const woff2 = require('../src/woff2.js');
 
 const magic = {
+  // http://www.garykessler.net/library/file_sigs.html
   ttf: [0x00, 0x01, 0x00, 0x00],
-  woff2: [0x77, 0x4f, 0x46, 0x32] // "wOF2"
+  // "wOF2", see https://www.w3.org/TR/WOFF2/#woff20Header
+  woff2: [0x77, 0x4f, 0x46, 0x32]
 };
 
 test('Decode WOFF2 data.', (t) => {
