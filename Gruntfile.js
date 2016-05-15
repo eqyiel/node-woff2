@@ -5,6 +5,19 @@ const template = `# node-woff2
 This is just a Node.js wrapper around Google\'s excellent
 [woff2](https://github.com/google/woff2) utility.
 
+## Usage
+
+If you're using \`npm\`:
+
+\`\`\`
+npm install --save-dev woff2
+\`\`\`
+
+Alternatively you can clone this repo and run \`npm install\`.  Be sure to get
+the submodule dependency (use the \`--recursive\` flag when cloning).  Note that
+you can't install directly from this repo because \`npm\` doesn't understand
+submodules.
+
 ## Special thanks
 
 [nfroidure](https://github.com/nfroidure) wrote a wrapper that
