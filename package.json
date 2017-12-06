@@ -4,6 +4,8 @@
   "description": "Node wrapper around Google's woff2 utility.",
   "main": "./src/woff2.js",
   "scripts": {
+    "lint": "npm run run-eslint",
+    "run-eslint": "eslint --config ./.eslintrc.json src/**.js test/**.js",
     "test": "tap test/*.js"
   },
   "author": {
@@ -31,7 +33,9 @@
     "nan": "^2.2.1"
   },
   "devDependencies": {
-    "eslint-config-airbnb": "^6.2.0",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.7.0",
     "font-awesome": "^4.5.0",
     "mmmagic": "^0.4.1",
     "tap": "^5.7.1",
