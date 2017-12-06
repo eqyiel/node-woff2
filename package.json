@@ -21,7 +21,6 @@
   "license": "MIT",
   "files": [
     "README.md",
-    "Gruntfile.js",
     "binding.gyp",
     "src/",
     "test/",
@@ -34,10 +33,6 @@
   "devDependencies": {
     "eslint-config-airbnb": "^6.2.0",
     "font-awesome": "^4.5.0",
-    "grunt": "^1.0.1",
-    "grunt-contrib-clean": "^1.0.0",
-    "grunt-eslint": "^18.0.0",
-    "grunt-jsdoc-to-markdown": "^1.2.0",
     "mmmagic": "^0.4.1",
     "tap": "^5.7.1",
     "temp": "^0.8.3"
