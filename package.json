@@ -42,5 +42,6 @@
   "prettier": {
     "trailingComma": "es5",
     "singleQuote": true
-  }
+  },
+  "engines": { "node": ">=4.8.5" }
 }
