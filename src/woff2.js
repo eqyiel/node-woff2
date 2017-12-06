@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * @module woff2
  * @namespace

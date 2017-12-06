@@ -1,4 +1,4 @@
-'use strict';
+/* eslint-disable import/no-extraneous-dependencies */
 
 const basePath = './node_modules/font-awesome/fonts';
 const fs = require('fs');
@@ -24,14 +24,14 @@ test('Decode WOFF2 data.', t => {
     // eslint-disable-next-line no-shadow
     fs.writeFile(file, woff2.decode(data), err => {
       if (err) throw err;
+      // eslint-disable-next-line no-shadow
       fs.open(file, 'r', (err, fd) => {
-        // eslint-disable-line no-shadow
         if (err) throw err;
         const buffer = new Buffer(4);
         // eslint-disable-next-line no-shadow
         fs.read(fd, buffer, 0, 4, 0, (err, bytesRead, buffer) => {
+          // eslint-disable-next-line no-shadow
           fs.close(fd, err => {
-            // eslint-disable-line no-shadow
             if (err) throw err;
             t.ok(buffer.equals(new Buffer(magic.ttf)));
             t.end();
@@ -52,14 +52,14 @@ test('Encode WOFF2 data.', t => {
     // eslint-disable-next-line no-shadow
     fs.writeFile(file, woff2.encode(data), err => {
       if (err) throw err;
+      // eslint-disable-next-line no-shadow
       fs.open(file, 'r', (err, fd) => {
-        // eslint-disable-line no-shadow
         if (err) throw err;
         const buffer = new Buffer(4);
         // eslint-disable-next-line no-shadow
         fs.read(fd, buffer, 0, 4, 0, (err, bytesRead, buffer) => {
+          // eslint-disable-next-line no-shadow
           fs.close(fd, err => {
-            // eslint-disable-line no-shadow
             if (err) throw err;
             t.ok(buffer.equals(new Buffer(magic.woff2)));
             t.end();
