@@ -27,13 +27,13 @@ test('Decode WOFF2 data.', t => {
       // eslint-disable-next-line no-shadow
       fs.open(file, 'r', (err, fd) => {
         if (err) throw err;
-        const buffer = new Buffer(4);
+        const buffer = Buffer.alloc(4);
         // eslint-disable-next-line no-shadow
         fs.read(fd, buffer, 0, 4, 0, (err, bytesRead, buffer) => {
           // eslint-disable-next-line no-shadow
           fs.close(fd, err => {
             if (err) throw err;
-            t.ok(buffer.equals(new Buffer(magic.ttf)));
+            t.ok(buffer.equals(Buffer.from(magic.ttf)));
             t.end();
           });
         });
@@ -55,13 +55,13 @@ test('Encode WOFF2 data.', t => {
       // eslint-disable-next-line no-shadow
       fs.open(file, 'r', (err, fd) => {
         if (err) throw err;
-        const buffer = new Buffer(4);
+        const buffer = Buffer.alloc(4);
         // eslint-disable-next-line no-shadow
         fs.read(fd, buffer, 0, 4, 0, (err, bytesRead, buffer) => {
           // eslint-disable-next-line no-shadow
           fs.close(fd, err => {
             if (err) throw err;
-            t.ok(buffer.equals(new Buffer(magic.woff2)));
+            t.ok(buffer.equals(Buffer.from(magic.woff2)));
             t.end();
           });
         });
