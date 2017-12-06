@@ -4,8 +4,10 @@
   "description": "Node wrapper around Google's woff2 utility.",
   "main": "./src/woff2.js",
   "scripts": {
-    "lint": "npm run run-eslint",
+    "lint": "npm-run-all run-eslint run-prettier",
     "run-eslint": "eslint --config ./.eslintrc.json src/**.js test/**.js",
+    "run-prettier":
+      "prettier **.json src/**/*{js,json} test/**/*{js,json} README.md --prose-wrap always --write",
     "test": "tap test/*.js"
   },
   "author": {
@@ -20,13 +22,7 @@
     "url": "git+https://github.com/eqyiel/node-woff2.git"
   },
   "license": "MIT",
-  "files": [
-    "README.md",
-    "binding.gyp",
-    "src/",
-    "test/",
-    "woff2/"
-  ],
+  "files": ["README.md", "binding.gyp", "src/", "test/", "woff2/"],
   "dependencies": {
     "bindings": "^1.2.1",
     "nan": "^2.2.1"
@@ -34,10 +30,17 @@
   "devDependencies": {
     "eslint": "^4.9.0",
     "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.7.0",
     "font-awesome": "^4.5.0",
     "mmmagic": "^0.4.1",
+    "npm-run-all": "^4.1.2",
+    "prettier": "^1.9.1",
     "tap": "^5.7.1",
     "temp": "^0.8.3"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "singleQuote": true
   }
 }
