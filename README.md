@@ -79,3 +79,9 @@ var input = fs.readFileSync('something.ttf');
 var output = 'output.woff2';
 fs.writeFileSync(output, woff2.encode(input));
 ```
+
+## Hacking
+
+In order to use the development env, install [Nix](https://nixos.org/nix/) and
+run `nix-shell` in the root of this repo. You will be dropped into a shell with
+the project's dependencies installed.
