@@ -28,9 +28,9 @@ in with nixpkgsUnstable.pkgs; stdenv.mkDerivation rec {
   env = buildEnv { name = name; paths = buildInputs; };
   buildInputs = with pkgs; [
     nodejs-4_x
-    nodePackages.yarn
-    nodePackages.node-gyp
-  ];
+  ] ++ (with nodePackages_4_x; [
+    yarn node-gyp
+  ]);
   shellHook = ''
     ✨ environment ready!
   '';
