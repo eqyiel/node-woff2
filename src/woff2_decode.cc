@@ -3,7 +3,7 @@
 // #include <node.h>
 // #include <node_buffer.h>
 #include <stdlib.h>
-#include "../woff2/src/woff2_dec.h"
+#include <woff2/decode.h>
 
 using namespace v8;
 

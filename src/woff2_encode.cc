@@ -3,7 +3,7 @@
 // #include <node.h>
 // #include <node_buffer.h>
 #include <stdlib.h>
-#include "../woff2/src/woff2_enc.h"
+#include <woff2/encode.h>
 
 namespace v8 {
 NAN_METHOD(encode) {

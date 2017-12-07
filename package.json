@@ -7,7 +7,7 @@
     "lint": "npm-run-all run-eslint run-prettier",
     "run-eslint": "eslint --config ./.eslintrc.json src/**.js test/**.js",
     "run-prettier":
-      "prettier **.json src/**/*{js,json} test/**/*{js,json} README.md --prose-wrap always --write",
+      "prettier **.json src/**/*{js,json} test/**/*{js,json} README.md binding.gyp --prose-wrap always --write",
     "test": "tap test/*.js"
   },
   "author": {
@@ -41,7 +41,15 @@
   },
   "prettier": {
     "trailingComma": "es5",
-    "singleQuote": true
+    "singleQuote": true,
+    "overrides": [
+      {
+        "files": "binding.gyp",
+        "options": {
+          "parser": "json"
+        }
+      }
+    ]
   },
   "engines": { "node": ">=4.8.5" }
 }
