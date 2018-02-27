@@ -33,7 +33,7 @@
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.7.0",
     "font-awesome": "^4.5.0",
-    "mmmagic": "^0.4.1",
+    "mmmagic": "^0.5.0",
     "npm-run-all": "^4.1.2",
     "prettier": "^1.9.1",
     "tap": "^11.0.0",
