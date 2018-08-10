@@ -28,7 +28,7 @@
     "nan": "^2.2.1"
   },
   "devDependencies": {
-    "eslint": "^4.9.0",
+    "eslint": "^5.0.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.7.0",
