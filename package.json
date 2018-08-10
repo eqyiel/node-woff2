@@ -51,5 +51,8 @@
       }
     ]
   },
-  "engines": { "node": ">=4.8.5" }
+  "engines": { "node": ">=4.8.5" },
+  "renovate": {
+    "extends": [":pinOnlyDevDependencies"]
+  }
 }
