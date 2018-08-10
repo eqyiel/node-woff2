@@ -32,6 +32,6 @@ in with nixpkgsUnstable.pkgs; stdenv.mkDerivation rec {
     yarn node-gyp
   ]);
   shellHook = ''
-    ✨ environment ready!
+    echo ✨ environment ready!
   '';
 }
