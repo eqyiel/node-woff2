@@ -32,9 +32,9 @@ the MIT license.
 
 **Kind**: global namespace
 
-* [woff2](#woff2) : <code>object</code>
-  * [.decode](#woff2.decode) ⇒ <code>Buffer</code>
-  * [.encode](#woff2.encode) ⇒ <code>Buffer</code>
+- [woff2](#woff2) : <code>object</code>
+  - [.decode](#woff2.decode) ⇒ <code>Buffer</code>
+  - [.encode](#woff2.encode) ⇒ <code>Buffer</code>
 
 <a name="woff2.decode"></a>
 
