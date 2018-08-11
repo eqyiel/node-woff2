@@ -4,7 +4,7 @@
   "description": "Node wrapper around Google's woff2 utility.",
   "main": "./src/woff2.js",
   "scripts": {
-    "lint": "npm-run-all run-eslint run-prettier",
+    "lint": "npm run run-eslint && npm run run-prettier",
     "run-eslint": "./scripts/run-eslint.sh",
     "run-prettier": "./scripts/run-prettier.sh",
     "test": "npm run lint && tap test/*.js"
@@ -42,7 +42,6 @@
     "eslint-plugin-react": "7.10.0",
     "font-awesome": "4.7.0",
     "mmmagic": "0.5.0",
-    "npm-run-all": "4.1.2",
     "prettier": "1.14.2",
     "tap": "12.0.1",
     "temp": "0.8.3"
