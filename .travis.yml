@@ -1,8 +1,19 @@
 language: node_js
+
 node_js:
-  - 4
   - node
   - lts/*
-before_install: yarn global add greenkeeper-lockfile@1
-before_script: greenkeeper-lockfile-update
-after_script: greenkeeper-lockfile-upload
+
+cache:
+  directories:
+    - ".yarn-offline-mirror"
+
+before_install:
+  - yarn config set yarn-offline-mirror ".yarn-offline-mirror"
+  - yarn config set yarn-offline-mirror-pruning true
+
+install:
+  yarn --prefer-offline
+
+script:
+  yarn run test && test -z "$(git status --porcelain)"
