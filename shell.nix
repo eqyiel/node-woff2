@@ -6,13 +6,13 @@ let
 
   nixpkgsUnstable = with nixpkgsLocal.pkgs; callPackage (stdenv.mkDerivation rec {
     name = "nixpkgs-unstable-${version}";
-    version = "2017-12-07";
+    version = "2018-08-10";
 
     src = fetchFromGitHub {
       owner = "NixOS";
       repo = "nixpkgs-channels";
-      rev = "a88146d308fb5fa8e3cc466fffecaf0fe9ff9a2e";
-      sha256 = "0siy03n2kc34axxh34x8bpqiwz0nzklyl5zxc951jks9gwb85j8v";
+      rev = "bf1b50cbc8ffe9747758d089e3148406a7ce5c21";
+      sha256 = "0clczc8n7415i7pcqs1my8ydf0sijkcwqw6c36dgn998kdrgknh8";
     };
 
     dontBuild = true;
@@ -27,8 +27,9 @@ in with nixpkgsUnstable.pkgs; stdenv.mkDerivation rec {
   name = "node-woff2-env";
   env = buildEnv { name = name; paths = buildInputs; };
   buildInputs = with pkgs; [
-    nodejs-4_x
-  ] ++ (with nodePackages_4_x; [
+    nodejs-6_x
+    python
+  ] ++ (with nodePackages_6_x; [
     yarn node-gyp
   ]);
   shellHook = ''
