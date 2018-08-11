@@ -5,7 +5,7 @@
   "main": "./src/woff2.js",
   "scripts": {
     "lint": "npm-run-all run-eslint run-prettier",
-    "run-eslint": "eslint --config ./.eslintrc.json src/**.js test/**.js",
+    "run-eslint": "./scripts/run-eslint.sh",
     "run-prettier": "./scripts/run-prettier.sh",
     "test": "npm run lint && tap test/*.js"
   },
