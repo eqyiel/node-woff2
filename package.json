@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "npm-run-all run-eslint run-prettier",
     "run-eslint": "eslint --config ./.eslintrc.json src/**.js test/**.js",
-    "run-prettier": "prettier **.json src/**/*{js,json} test/**/*{js,json} README.md binding.gyp --prose-wrap always --write",
+    "run-prettier": "./scripts/run-prettier.sh",
     "test": "npm run lint && tap test/*.js"
   },
   "author": {
