@@ -8,7 +8,7 @@
     "run-eslint": "eslint --config ./.eslintrc.json src/**.js test/**.js",
     "run-prettier":
       "prettier **.json src/**/*{js,json} test/**/*{js,json} README.md binding.gyp --prose-wrap always --write",
-    "test": "tap test/*.js"
+    "test": "npm run lint && tap test/*.js"
   },
   "author": {
     "name": "Ruben Maher",
