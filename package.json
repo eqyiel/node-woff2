@@ -33,19 +33,19 @@
     "nan": "^2.2.1"
   },
   "devDependencies": {
-    "eslint": "^5.3.0",
-    "eslint-config-airbnb": "^17.0.0",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.9.1",
-    "font-awesome": "^4.5.0",
-    "mmmagic": "^0.5.0",
-    "npm-run-all": "^4.1.2",
-    "prettier": "^1.14.2",
-    "tap": "^12.0.1",
-    "temp": "^0.8.3"
+    "eslint": "5.3.0",
+    "eslint-config-airbnb": "17.0.0",
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-plugin-import": "2.13.0",
+    "eslint-plugin-jsx-a11y": "6.1.1",
+    "eslint-plugin-react": "7.10.0",
+    "font-awesome": "4.7.0",
+    "mmmagic": "0.5.0",
+    "npm-run-all": "4.1.2",
+    "prettier": "1.14.2",
+    "tap": "12.0.1",
+    "temp": "0.8.3"
   },
   "prettier": {
     "proseWrap": "always",
