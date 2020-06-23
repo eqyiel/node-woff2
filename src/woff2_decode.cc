@@ -9,7 +9,8 @@ using namespace v8;
 
 NAN_METHOD(decode) {
   if ( info.Length() > 0 ) {
-    Local<Object> input_buffer = info[0]->ToObject();
+    Local<Context> context = info.GetIsolate()->GetCurrentContext();
+    Local<Object> input_buffer = info[0]->ToObject(context).ToLocalChecked();
 
     if (!node::Buffer::HasInstance(input_buffer)) {
       Nan::ThrowError(Nan::TypeError("First argument should be a Buffer."));
