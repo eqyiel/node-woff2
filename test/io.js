@@ -14,7 +14,7 @@ const magic = {
   woff2: [0x77, 0x4f, 0x46, 0x32],
 };
 
-test('Decode WOFF2 data.', t => {
+test('Decode WOFF2 data.', (t) => {
   temp.mkdir('node-woff2', (err, dirPath) => {
     if (err) throw err;
     const data = fs.readFileSync(
@@ -22,7 +22,7 @@ test('Decode WOFF2 data.', t => {
     );
     const file = path.join(dirPath, 'decoded.ttf');
     // eslint-disable-next-line no-shadow
-    fs.writeFile(file, woff2.decode(data), err => {
+    fs.writeFile(file, woff2.decode(data), (err) => {
       if (err) throw err;
       // eslint-disable-next-line no-shadow
       fs.open(file, 'r', (err, fd) => {
@@ -31,7 +31,7 @@ test('Decode WOFF2 data.', t => {
         // eslint-disable-next-line no-shadow
         fs.read(fd, buffer, 0, 4, 0, (err, bytesRead, buffer) => {
           // eslint-disable-next-line no-shadow
-          fs.close(fd, err => {
+          fs.close(fd, (err) => {
             if (err) throw err;
             t.ok(buffer.equals(Buffer.from(magic.ttf)));
             t.end();
@@ -42,7 +42,7 @@ test('Decode WOFF2 data.', t => {
   });
 });
 
-test('Encode WOFF2 data.', t => {
+test('Encode WOFF2 data.', (t) => {
   temp.mkdir('node-woff2', (err, dirPath) => {
     if (err) throw err;
     const data = fs.readFileSync(
@@ -50,7 +50,7 @@ test('Encode WOFF2 data.', t => {
     );
     const file = path.join(dirPath, 'encoded.woff2');
     // eslint-disable-next-line no-shadow
-    fs.writeFile(file, woff2.encode(data), err => {
+    fs.writeFile(file, woff2.encode(data), (err) => {
       if (err) throw err;
       // eslint-disable-next-line no-shadow
       fs.open(file, 'r', (err, fd) => {
@@ -59,7 +59,7 @@ test('Encode WOFF2 data.', t => {
         // eslint-disable-next-line no-shadow
         fs.read(fd, buffer, 0, 4, 0, (err, bytesRead, buffer) => {
           // eslint-disable-next-line no-shadow
-          fs.close(fd, err => {
+          fs.close(fd, (err) => {
             if (err) throw err;
             t.ok(buffer.equals(Buffer.from(magic.woff2)));
             t.end();

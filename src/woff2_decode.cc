@@ -7,11 +7,11 @@
 
 using namespace v8;
 
-NAN_METHOD(decode) {
-  Local<Object> input_buffer = info[0]->ToObject();
+void decode(const Nan::FunctionCallbackInfo<Value>& info) {
+  Local<Object> input_buffer = info[0]->ToObject(info.GetIsolate()->GetCurrentContext()).ToLocalChecked();
 
   if (!node::Buffer::HasInstance(input_buffer)) {
-    Nan::ThrowError(Nan::TypeError("First argument should be a Buffer."));
+    Nan::ThrowTypeError("First argument should be a Buffer.");
     return;
   }
 
