@@ -5,8 +5,8 @@
   "main": "./src/woff2.js",
   "scripts": {
     "lint": "npm run run-eslint && npm run run-prettier",
-    "run-eslint": "./scripts/run-eslint.sh",
-    "run-prettier": "./scripts/run-prettier.sh",
+    "run-eslint": "eslint **/*.js",
+    "run-prettier": "prettier --write **/*.{js,json,md,gyp}",
     "test": "npm run lint && tap test/*.js"
   },
   "author": {

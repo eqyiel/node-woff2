@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const temp = require('temp').track();
 const test = require('tap').test;
-const woff2 = require('../src/woff2.js');
+const woff2 = require('../src/woff2');
 
 const magic = {
   // http://www.garykessler.net/library/file_sigs.html
