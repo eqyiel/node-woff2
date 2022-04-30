@@ -1,38 +1,28 @@
-{ nixpkgs ? <nixpkgs>, system ? builtins.currentSystem }:
+{ nodeVersion ? "nodejs-12_x" }:
 
 let
+  # nix-prefetch-url --unpack https://github.com/NixOS/nixpkgs/archive/6766fb6503ae1ebebc2a9704c162b2aef351f921.tar.gz
+  nixpkgs =
+    import
+      (builtins.fetchTarball {
+        name = "nixpkgs-unstable-2022-04-30";
+        url = https://github.com/NixOS/nixpkgs/archive/6766fb6503ae1ebebc2a9704c162b2aef351f921.tar.gz;
+        sha256 = "1a805n9iqlbmffkzq3l6yf2xp74wjaz5pdcp0cfl0rhc179w4lpy";
+      })
+      { };
 
-  nixpkgsLocal = import nixpkgs { inherit system; };
-
-  nixpkgsUnstable = with nixpkgsLocal.pkgs; callPackage (stdenv.mkDerivation rec {
-    name = "nixpkgs-unstable-${version}";
-    version = "2018-08-10";
-
-    src = fetchFromGitHub {
-      owner = "NixOS";
-      repo = "nixpkgs-channels";
-      rev = "bf1b50cbc8ffe9747758d089e3148406a7ce5c21";
-      sha256 = "0clczc8n7415i7pcqs1my8ydf0sijkcwqw6c36dgn998kdrgknh8";
-    };
-
-    dontBuild = true;
-    preferLocalBuild = true;
-
-    installPhase = ''
-      cp -a . $out
-    '';
-  }) { inherit system; };
-
-in with nixpkgsUnstable.pkgs; stdenv.mkDerivation rec {
-  name = "node-woff2-env";
-  env = buildEnv { name = name; paths = buildInputs; };
-  buildInputs = with pkgs; [
-    nodejs-6_x
-    python
-  ] ++ (with nodePackages_6_x; [
-    yarn node-gyp
+  nodejs = builtins.getAttr nodeVersion nixpkgs.pkgs;
+in
+nixpkgs.pkgs.mkShell {
+  packages = [
+    nodejs
+    nixpkgs.pkgs.python3
+  ] ++ (with nixpkgs.pkgs.nodePackages; [
+    (nixpkgs.pkgs.yarn.override { nodejs = nodejs; })
   ]);
+
   shellHook = ''
-    echo ✨ environment ready!
+    # Teach node-gyp where to find headers locally
+    export npm_config_nodedir=${nodejs}
   '';
 }

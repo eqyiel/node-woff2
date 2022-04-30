@@ -6,8 +6,8 @@
   "scripts": {
     "lint": "npm run run-eslint && npm run run-prettier",
     "run-eslint": "eslint **/*.js",
-    "run-prettier": "prettier --write **/*.{js,json,md,gyp}",
-    "test": "npm run lint && tap test/*.js"
+    "run-prettier": "prettier --write **/*.{js,json,md,gyp,yml}",
+    "test": "npm run lint && tap --no-check-coverage test/*.js"
   },
   "author": {
     "name": "Ruben Maher",
@@ -42,6 +42,7 @@
     "eslint-plugin-react": "7.29.4",
     "font-awesome": "4.7.0",
     "mmmagic": "0.5.3",
+    "node-gyp": "^9.0.0",
     "prettier": "2.6.2",
     "tap": "16.0.1",
     "temp": "0.9.4"
@@ -61,7 +62,7 @@
     ]
   },
   "engines": {
-    "node": ">=4.8.5"
+    "node": ">=12"
   },
   "renovate": {
     "extends": [
