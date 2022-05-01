@@ -5,8 +5,8 @@
   "main": "./src/woff2.js",
   "scripts": {
     "lint": "npm run run-eslint && npm run run-prettier",
-    "run-eslint": "./scripts/run-eslint.sh",
-    "run-prettier": "./scripts/run-prettier.sh",
+    "run-eslint": "eslint **/*.js",
+    "run-prettier": "prettier --write **/*.{js,json,md,gyp}",
     "test": "npm run lint && tap test/*.js"
   },
   "author": {
@@ -29,22 +29,22 @@
     "woff2/"
   ],
   "dependencies": {
-    "bindings": "^1.2.1",
-    "nan": "^2.2.1"
+    "bindings": "^1.5.0",
+    "nan": "^2.15.0"
   },
   "devDependencies": {
-    "eslint": "5.3.0",
-    "eslint-config-airbnb": "17.1.0",
-    "eslint-config-airbnb-base": "13.1.0",
-    "eslint-config-prettier": "3.0.1",
-    "eslint-plugin-import": "2.14.0",
-    "eslint-plugin-jsx-a11y": "6.1.1",
-    "eslint-plugin-react": "7.11.0",
+    "eslint": "8.13.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jsx-a11y": "6.5.1",
+    "eslint-plugin-react": "7.29.4",
     "font-awesome": "4.7.0",
-    "mmmagic": "0.5.0",
-    "prettier": "1.14.2",
-    "tap": "12.0.1",
-    "temp": "0.8.3"
+    "mmmagic": "0.5.3",
+    "prettier": "2.6.2",
+    "tap": "16.0.1",
+    "temp": "0.9.4"
   },
   "prettier": {
     "proseWrap": "always",
