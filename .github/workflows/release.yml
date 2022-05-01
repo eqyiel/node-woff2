@@ -1,0 +1,19 @@
+on:
+  push:
+    branches:
+      - 'master'
+jobs:
+  tests:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - uses: 'actions/checkout@v2.4.0'
+        with:
+          submodules: 'recursive'
+      - uses: 'cachix/install-nix-action@v17'
+        with:
+          nix_path: 'nixpkgs=channel:nixpkgs-unstable'
+      - run: |
+          nix-shell  --command 'yarn && npx semantic-release@v19.0.2'
+        env:
+          NPM_TOKEN: '${{ secrets.NPM_TOKEN }}'
+          GH_TOKEN: '${{ secrets.GITHUB_TOKEN }}'

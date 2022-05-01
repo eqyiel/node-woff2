@@ -1,6 +1,6 @@
 {
   "name": "woff2",
-  "version": "0.2.2",
+  "version": "0.0.0-semantic-release",
   "description": "Node wrapper around Google's woff2 utility.",
   "main": "./src/woff2.js",
   "scripts": {
@@ -63,5 +63,10 @@
   },
   "engines": {
     "node": ">=12"
+  },
+  "release": {
+    "branches": [
+      "master"
+    ]
   }
 }

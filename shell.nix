@@ -1,4 +1,4 @@
-{ nodeVersion ? "nodejs-12_x" }:
+{ nodeVersion ? "nodejs-16_x" }:
 
 let
   # nix-prefetch-url --unpack https://github.com/NixOS/nixpkgs/archive/6766fb6503ae1ebebc2a9704c162b2aef351f921.tar.gz

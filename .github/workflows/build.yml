@@ -12,7 +12,7 @@ jobs:
         with:
           nix_path: 'nixpkgs=channel:nixpkgs-unstable'
       - run: |
-          nix-shell --command 'yarn && yarn run test'
+          nix-shell --arg nodeVersion '"nodejs-12_x"' --command 'yarn && yarn run test'
 
           if ! test -z "$(git status --porcelain)"; then
             echo "There were untracked files after running linters, please check the output of git status"
